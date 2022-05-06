@@ -59,8 +59,9 @@ serial-src-$(CONFIG_MACH_STM32F0) := stm32/stm32f0_serial.c
 serial-src-$(CONFIG_MACH_STM32G0) := stm32/stm32f0_serial.c
 serial-src-$(CONFIG_MACH_STM32H7) := stm32/stm32h7_serial.c
 src-$(CONFIG_SERIAL) += $(serial-src-y) generic/serial_irq.c
-src-$(CONFIG_CANSERIAL) += stm32/can.c ../lib/fast-hash/fasthash.c
-src-$(CONFIG_CANSERIAL) += generic/canbus.c
+src-$(CONFIG_HAVE_STM32_CANBUS) += stm32/can.c
+src-$(CONFIG_HAVE_STM32_FDCANBUS) += stm32/fdcan.c
+src-$(CONFIG_CANSERIAL) += generic/canbus.c ../lib/fast-hash/fasthash.c
 src-$(CONFIG_HAVE_GPIO_HARD_PWM) += stm32/hard_pwm.c
 
 dirs-$(CONFIG_CANSERIAL) += lib/fast-hash
